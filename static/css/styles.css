@@ -1,0 +1,7 @@
+.table-striped > tbody > tr:nth-of-type(odd) {
+    --bs-table-striped-bg: #cba1e3;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+    -/*-bs-table-striped-bg: #cba1e3;*/
+    background-color: #cba1e3;
+}

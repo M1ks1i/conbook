@@ -2,3 +2,41 @@
 {% block title %}
 Contact Book
 {% endblock %}
+
+{% block content %}
+<div class="contacts-table">
+    <h2 class="text-center">Contacts</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Foto</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone number</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Foto</td>
+                <td>Bilopolskyi</td>
+                <td>Mark</td>
+                <td>+380958634299</td>
+                <td>krilica19@gmail.com</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>John</td>
+                <td>Doe</td>
+                <td>@social</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
