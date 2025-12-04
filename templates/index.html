@@ -17,14 +17,16 @@ Contact Book
             </tr>
         </thead>
         <tbody>
-            <tr>
+        {% for contact in contacts %}
+            <tr class="contact-row" data-contact-id="{{contact.id}}">
                 <td>Foto</td>
                 <td>Bilopolskyi</td>
                 <td>Mark</td>
                 <td>+380958634299</td>
                 <td>krilica19@gmail.com</td>
             </tr>
-            <tr>
+        {% endfor %}
+           <!-- <tr>
                 <th scope="row">2</th>
                 <td>Jacob</td>
                 <td>Thornton</td>
@@ -35,7 +37,7 @@ Contact Book
                 <td>John</td>
                 <td>Doe</td>
                 <td>@social</td>
-            </tr>
+            </tr>-->
         </tbody>
     </table>
 </div>
