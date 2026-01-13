@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Contacts Book</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Contacts Book</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,7 +26,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Contacts List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Add Contacts</a>
+                        <a class="nav-link" href="{% url 'addcontact' %}">Add Contacts</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,6 +51,7 @@
     </nav>
     {% block content %}
     {% endblock %}
-    <script scr="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+<!--      <script>alert(1);</script>-->
 </body>
 </html>

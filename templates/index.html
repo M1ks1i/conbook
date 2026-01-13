@@ -19,12 +19,22 @@ Contact Book
         <tbody>
         {% for contact in contacts %}
             <tr class="contact-row" data-contact-id="{{contact.id}}">
-                <td>Foto</td>
-                <td>Bilopolskyi</td>
-                <td>Mark</td>
-                <td>+380958634299</td>
-                <td>krilica19@gmail.com</td>
+                <td>
+                    <img src="{{ contact.foto.url }}" alt="Contacts photo" width="50">
+                </td>
+                <td>{{ contact.last_name }}</td>
+                <td>{{ contact.first_name }}</td>
+                <td>{{ contact.phone_num }}</td>
+                <td>{{ contact.email }}</td>
             </tr>
+        <tr id="details - {{ contact.id }}" style="display: none;">
+            <td colspan="5">
+                <a href="#">call📞</a>
+                <a href="#">write✍️</a>
+                <a href="#">edit✏️</a>
+                <a href="#">delete🗑️</a>
+            </td>
+        </tr>
         {% endfor %}
            <!-- <tr>
                 <th scope="row">2</th>
