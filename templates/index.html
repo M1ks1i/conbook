@@ -29,10 +29,12 @@ Contact Book
             </tr>
         <tr id="details - {{ contact.id }}" style="display: none;">
             <td colspan="5">
-                <a href="#">call📞</a>
-                <a href="#">write✍️</a>
-                <a href="#">edit✏️</a>
-                <a href="#">delete🗑️</a>
+                <a href="tel:{{ contact.phone_num }}">call📞</a>
+                <a href="mailto:{{ contact.email }}">write email✍️</a>
+<!--                <a href="https://t.me/{{ contact.telegram_username }}">Telegram</a>-->
+                <a href="https://wa.me/{{ contact.phone_num }}">WhatsApp</a>
+                <a href="{% url 'editcontact' contact.id %}">edit✏️</a>
+                <a href="{% url 'deletecontact' contact.id %}">delete🗑️</a>
             </td>
         </tr>
         {% endfor %}

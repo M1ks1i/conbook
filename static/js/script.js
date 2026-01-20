@@ -1,45 +1,48 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let selectedRow = null;
-    let selectedContactId = null;
-    const rows = document.querySelectorAll(".contact-row");
-
-    rows.forEach(row => {
-
+// Очікуємо, поки весь HTML буде повністю завантажено 
+document.addEventListener("DOMContentLoaded", function() { 
+    // Змінні для зберігання вибраного рядка та ID контакту 
+    let selectedRow = null; 
+    let selectedContactId = null; 
+    
+    // Отримуємо всі рядки з класом "contact-row" 
+    const rows = document.querySelectorAll(".contact-row"); 
+    
+    // Отримуємо кнопку редагування за її ID 
+//    const editButton = document.getElementById("editButton");
+    
+    // Додаємо обробник події кліку для кожного рядка 
+    rows.forEach(row => { 
         row.addEventListener("click", function() {
-            selectedRow = this;
-            selectedContactId = this.dataset.contactId;
-            let dtrow = document.getElementById("details - " + selectedContactId);
+            // Якщо вже був вибраний рядок — знімаємо з нього підсвітку
             if (selectedRow) {
-//                if (dtrow.style.display === 'none') {
-                    selectedRow.classList.remove("table-active");
-//                    dtrow.style.display === 'table-row';
-    //                alert('1');
-//                } else {
-                    selectedRow.classList.add("table-active");
-//                    dtrow.style.display === 'none';
-//                }
+                selectedRow.classList.remove("table-active");
             }
-            if (dtrow.style.display === 'none') {
-                dtrow.style.display === 'table-row';
+
+            // Встановлюємо новий вибраний рядок і додаємо йому клас підсвітки
+            selectedRow = this;
+            selectedRow.classList.add("table-active");
+
+            // Зчитуємо ID контакту з data-атрибуту обраного рядка
+            selectedContactId = this.dataset.contactId;
+
+            // Формуємо посилання для кнопки редагування з урахуванням вибраного
+
+//            editButton.href = `edit/${selectedContactId}/`;
+        });
+
+        row.addEventListener("dblclick", function() {
+            const contactId = row.dataset.contactId;
+            const detailsRow = document.getElementById('details - ' + contactId);
+
+            if (detailsRow.style.display === 'none') {
+                detailsRow.style.display = 'table-row';
             } else {
-                dtrow.style.display === 'none';
+                detailsRow.style.display = 'none';
             }
 
 
 
-//            alert(selectedContactId);
-        })
-    })
-})
+        });
 
-//document.addEventListener("DOMContentLoaded", function() {
-//    window.toggleDetails = function(row){
-//        const selectedContactId = row.dataset.contactId;
-//        const dtrow = document.getElementById("details - " + selectedContactId);
-//        if (dtrow.style.display === 'none') {
-//            dtrow.style.display === 'table-row';
-//        } else {
-//            dtrow.style.display === 'none';
-//        }
-//    }
-//})
+    }); 
+});

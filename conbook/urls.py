@@ -17,13 +17,15 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path
-from app.views import index, add_contact
+from app.views import index, add_contact, edit_contact, delete_contact
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='home' ),
-    path('add/', add_contact, name = 'addcontact')
+    path('add/', add_contact, name = 'addcontact'),
+    path('edit/<int:pk>/', edit_contact, name = 'editcontact'),
+    path('delete/<int:pk>/', delete_contact, name = 'deletecontact')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
