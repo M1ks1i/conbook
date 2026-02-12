@@ -5,9 +5,9 @@ add/change contact
 
 {% block content %}
 <h1>{% if contact %}change{% else %}new{% endif %} contact</h1>
-<form method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data" id="form" ">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">save</button>
+    <button type="submit" class="btn btn-primary" id="check">save</button>
 </form>
 {% endblock %}
